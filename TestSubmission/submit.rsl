@@ -1,0 +1,8 @@
+&( executable = "hello.sh" )
+ ( stdout = "stdout" )
+ ( stderr = "stderr" )
+ ( inputfiles = ( "hello.sh" "" ) )
+ ( outputfiles = ( "stdout" "" ) ( "stderr" "" ) )
+ ( queue = "condor_q2d" )
+ ( jobname = "RSL Hello World job" )
+
