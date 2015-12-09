@@ -54,6 +54,22 @@ cat > /etc/grid-security/vomsdir/vo.scotgrid.ac.uk/voms03.gridpp.ac.uk.lsc <<"EO
 /C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B
 EOF
 
+echo "============================================="
+echo "Configuring ATLAS Access"
+echo "============================================="
+
+echo "Installing ATLAS VOMS information"
+rpm -Uvh http://linuxsoft.cern.ch/wlcg/sl6/x86_64/wlcg-voms-atlas-1.0.0-1.noarch.rpm
+
+
+echo "============================================="
+echo "Adding Environment Variables to .bashrc"
+echo "============================================="
+
+echo "Adding X509 paths"
+echo "export X509_USER_CERT=/vagrant/usercert.pem" >> /home/vagrant/.bashrc
+echo "export X509_USER_KEY=/vagrant/userkey.pem" >> /home/vagrant/.bashrc
+
 
 echo "============================================="
 echo "Finished"
