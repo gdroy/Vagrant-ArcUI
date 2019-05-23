@@ -12,6 +12,13 @@ An appropriate Grid certificate split into userkey.pem and usercert.pem by using
  openssl pkcs12 -clcerts -nokeys -out usercert.pem -in certificate.p12
  openssl pkcs12 -nocerts -out userkey.pem -in certificate.p12
 ```
+
+and ensure the permissions are correct on the certificat and key:
+```
+chmod 400 userkey.pem
+chmod 644 usercert.pem
+```
+
 Usage
 =====
 
@@ -39,7 +46,7 @@ arcproxy -S vo.scotgrid.ac.uk -N
 
 Submit the test job to the ArcCE of your choice:
 ```
- arcsub -c ldap://<arcce> submit.rsl
+ arcsub -c <arcce> submit.rsl
 ```
 Check status and see the output of StdOut and StdErr:
 ```
