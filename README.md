@@ -32,6 +32,11 @@ Change into the testing directory:
 ```
  cd /vagrant/TestSubmission
 ```
+Create a proxy:
+```
+arcproxy -S vo.scotgrid.ac.uk -N
+```
+
 Submit the test job to the ArcCE of your choice:
 ```
  arcsub -c ldap://<arcce> submit.rsl
